@@ -100,13 +100,12 @@ body {
 }
 
 .description{
-  width: 280px;
+  width: 300px;
   text-transform: none;
-  position: relative;
   text-align: left;
-  float: center;
+  
   padding-inline: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 8px;
   line-height: 14px;
   color: rgb(139, 139, 139);
 }
@@ -118,7 +117,7 @@ body {
   filter: grayscale(100%);
   float:left;
   margin-inline: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 h1 {
@@ -132,26 +131,26 @@ h3 {
   margin-bottom: 6px;
 }
 
-a {
-  color: #000;
-  transition: opacity 1s;
-  text-align: left;
-  width: 300px;
-}
-
 p {
   margin: 0px 0;
+  position: relative;
 }
 
-.link-btn{
+button.link-btn{
   background-color: rgb(29, 29, 29);
-  color: white;
   border: none;
   text-align: left;
   border-radius: 5px;
-  line-height: 20px;
-  position: relative;
-  left: 0px
+  padding: 7px 7px;
+  line-height: 10px;
+  position: absolute;
+  left: 0;
+  left: 105px;
+}
+
+
+button.link-btn:hover{
+  background-color: rgb(71, 71, 71);
 }
 
 .wrapper {
