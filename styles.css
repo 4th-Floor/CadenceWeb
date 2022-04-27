@@ -1,5 +1,6 @@
 /* Create three equal columns that floats next to each other */
 .column {
+  position: relative;
   float: left;
   width: 33.33%;
   padding: 0px;
@@ -7,25 +8,25 @@
 
 /* Clear floats after the columns */
 .row:after {
+  bottom: 10px;
   content: "";
   display: table;
-  clear: both;
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width:600px) {
-  .column {
-    clear: both;
-    float: right;
-    width: 100%;
-  }
+.itemList{
+  position: absolute;
+  top: 45%;
+}
+
+.profiles{
+  position: absolute;
+  bottom: 0px;
 }
 
 
 html, body, div, 
 h1, h2, h3, h4, h5, h6, p,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
+b, u, i, center,dl, dt, dd, ol, ul, li,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -59,12 +60,9 @@ table {
   border-spacing: 0;
 }
 
-/****************************************************************************/
-/* SUDO */
-/****************************************************************************/
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family:  BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   text-rendering: optimizeLegibility;
   text-align: center;
   color: #000;
@@ -77,20 +75,50 @@ body {
 
 .name{
   position: relative;
-  text-align: center;
   font-weight: 600;
+  position: relative;
   font-size: 14px;
+  line-height: 14px;
+  width: 250px;
+  padding-inline: 20px;
+  text-align: left;
+}
+
+.cadenceTitle{
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.title {
+  padding: 0;
+  color: rgb(124, 124, 124);
+  font-weight: 700;
+  font-size: 14px;
+  width: 250px;
+  padding-inline: 20px;
+  text-align: left;
 }
 
 .description{
-  width: 200px;
+  width: 280px;
   text-transform: none;
   position: relative;
-  text-align: center;
+  text-align: left;
   float: center;
   padding-inline: 20px;
   padding-bottom: 20px;
   line-height: 14px;
+  color: rgb(139, 139, 139);
+}
+
+.headshot{
+  width: 70px;
+  height: auto;
+  border-radius: 30%;
+  filter: grayscale(100%);
+  float:left;
+  margin-inline: 20px;
+  margin-bottom: 40px;
 }
 
 h1 {
@@ -105,28 +133,31 @@ h3 {
 }
 
 a {
-  text-decoration: none;
   color: #000;
   transition: opacity 1s;
-
+  text-align: left;
+  width: 300px;
 }
 
 p {
   margin: 0px 0;
 }
 
-.headshot{
-  width: 70px;
-  height: auto;
-  border-radius: 50%;
-  padding: 10px;
-  filter: grayscale(100%)
+.link-btn{
+  background-color: rgb(29, 29, 29);
+  color: white;
+  border: none;
+  text-align: left;
+  border-radius: 5px;
+  line-height: 20px;
+  position: relative;
+  left: 0px
 }
 
 .wrapper {
   display: grid;
   place-items: center;
-  min-height: 100vh;
+  min-height: 50vh;
 }
 
 footer {
@@ -156,4 +187,21 @@ footer a {
   a {
     color: #fff;
   }
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    clear: both;
+    float: right;
+    width: 100%;
+  }
+
+  .itemList{
+    top: 0px;
+  }
+
+  .profiles{
+    top: 120px
+  }
+
 }
